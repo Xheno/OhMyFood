@@ -1,0 +1,201 @@
+@import "./_variables";
+@import "./_mixins";
+@import "./_placeholders";
+
+
+* {
+  
+  font-family: "Roboto", sans-serif;
+  /*border: 1px solid red;*/
+
+}
+  /*****************************************Header*************************************************/
+  header {
+    margin-left: -8px;
+    margin-right: -8px;
+    .logoOMF {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+      width: 50%;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+    }
+    .location {
+      /*Je trouve pas comment gérer le boxshadow ou le fait de passer la div par dessus*/
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: #EAEAEA;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+    }
+  }
+  
+
+  
+  /*****************************************Title*****************************************************/
+  h1 {
+    text-align: center;
+  }/*# sourceMappingURL=style.css.map */
+  
+  .decouvrez {
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: 8px;
+    text-align: center;
+    background-color: #EAEAEA;
+  }
+
+  .decouvrez-text {
+    text-align: center;
+  }
+  
+  .explore_button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 40px;
+    background: blueviolet;
+    padding: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+    margin-bottom: 20px;
+  }
+  
+  .button_txt {
+    color: white;
+  }
+  /*****************************************Fonctionnement********************************************/
+  .fonctionnement {
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: 8px;
+  }
+  .fonctionnement_card {
+    display: flex;
+    background-color: #EAEAEA;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+    margin-bottom: 30px;
+    .num {
+      /*j'arrive pas a remplir le rond autour des numéros*/
+      border: 1px solid #9356DC;
+      border-radius: 50%;
+      color: white;
+      padding: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+      
+    }
+  }
+  
+  
+  /*****************************************Restaurants***********************************************/
+  img {
+    width: 100%;
+  }
+
+  .restaurants {
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: 8px;
+    background-color: #EAEAEA;
+    
+    .restaurant {
+      background-color: white;
+      border-radius: 20px;
+      height: 251px;
+      margin-bottom: 30px;
+    }
+    .r_img {
+      height: 174px;
+      object-fit: cover;
+      display: block;
+      width: 100%;
+      height: 70%;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+    .r_card_text {
+      padding: 10px;
+    }
+    .restaurant_h3 {
+      padding-left: 5px;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0;
+    }
+    .restaurant_p {
+      margin: 0;
+      padding-left: 5px;
+      padding-top: 5px;
+      font-size: 17px;
+      font-weight: 300;
+    }
+  }
+
+  
+  /******************************************Footer****************************************************/
+  footer {
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: 8px;
+    background-color: $black;
+    height: 186px;
+    color: white;
+    padding: 20px;
+    .logo_txt {
+      width: 133px;
+      height: 27px;
+      color: white;
+      font-family: "Shrikhand";
+      font-size: 18px;
+      font-weight: 400;
+      margin: 0;
+      padding-bottom: 15px;
+    }
+    .footer_links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .proposer_restaurant {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+    .partenaire {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+    .fa-solid {
+      color: white;
+    }
+    .footer_p {
+      margin: 0;
+      font-weight: 600;
+      font-size: 16px;
+      font-family: "Roboto", sans-serif;
+    }
+  }
+
+  
+
+  
+
+  
+
+  
+
+ 
+  
+
+  
