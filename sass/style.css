@@ -46,13 +46,16 @@ h1 {
 
 .explore_button {
   display: block;
+  border: none;
   margin-left: auto;
   margin-right: auto;
   border-radius: 40px;
-  background: blueviolet;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
   padding: 15px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
   margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .button_txt {
@@ -67,6 +70,7 @@ h1 {
 }
 
 .fonctionnement_card {
+  height: 72px;
   display: flex;
   background-color: #EAEAEA;
   flex-direction: row;
@@ -77,10 +81,14 @@ h1 {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
   margin-bottom: 30px;
 }
+.fonctionnement_card .border_num {
+  background-color: #9356DC;
+  border-radius: 50px;
+}
 .fonctionnement_card .num {
   /*j'arrive pas a remplir le rond autour des numéros*/
-  border: 1px solid #9356DC;
-  border-radius: 50%;
+  border: 1px solid black;
+  border-radius: 50px;
   color: white;
   padding: 10px;
   padding-left: 15px;
@@ -113,6 +121,10 @@ img {
   height: 70%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+}
+.restaurants .new {
+  position: absolute;
+  padding: 10px;
 }
 .restaurants .r_card_text {
   padding: 10px;
