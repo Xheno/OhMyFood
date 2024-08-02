@@ -64,12 +64,17 @@ h1 {
 
 /*****************************************Fonctionnement********************************************/
 .fonctionnement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-left: -8px;
   margin-right: -8px;
   padding: 8px;
 }
-
-.fonctionnement_card {
+.fonctionnement .fonctionnement_cards {
+  width: 90%;
+}
+.fonctionnement .fonctionnement_cards .fonctionnement_card {
   height: 72px;
   display: flex;
   background-color: #EAEAEA;
@@ -80,19 +85,25 @@ h1 {
   border-radius: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
   margin-bottom: 30px;
+  /*faire le hover sur la carte et changer la couleur des icones*/
 }
-.fonctionnement_card .border_num {
+.fonctionnement .fonctionnement_cards .fonctionnement_card .border_num {
   background-color: #9356DC;
   border-radius: 50px;
+  height: 30px;
+  width: 30px;
+  margin-left: -15px;
 }
-.fonctionnement_card .num {
+.fonctionnement .fonctionnement_cards .fonctionnement_card .border_num .num {
   /*j'arrive pas a remplir le rond autour des numéros*/
-  border: 1px solid black;
   border-radius: 50px;
   color: white;
-  padding: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  margin-top: 6px;
+}
+.fonctionnement .fonctionnement_cards .fonctionnement_card .fa-solid {
+  height: 19px;
+  color: #7E7E7E;
 }
 
 /*****************************************Restaurants***********************************************/
@@ -107,6 +118,7 @@ img {
   background-color: #EAEAEA;
 }
 .restaurants .restaurant {
+  position: relative;
   background-color: white;
   border-radius: 20px;
   height: 251px;
@@ -124,10 +136,43 @@ img {
 }
 .restaurants .new {
   position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #7E7E7E;
   padding: 10px;
+  border-radius: 10px;
 }
-.restaurants .r_card_text {
+.restaurants .new p {
+  margin: 0;
+}
+.restaurants .card_content {
+  display: flex;
+}
+.restaurants .card_content .r_card_text {
   padding: 10px;
+  width: 70%;
+}
+.restaurants .card_content .heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+.restaurants .card_content .heart .toggle_checkbox {
+  height: 0;
+  width: 0;
+}
+.restaurants .card_content .heart .heart_empty {
+  display: block;
+}
+.restaurants .card_content .heart .heart_full {
+  display: none;
+}
+.restaurants .card_content .heart .toggle_checkbox:checked ~ .heart_empty {
+  display: none;
+}
+.restaurants .card_content .heart .toggle_checkbox:checked ~ .heart_full {
+  display: block;
 }
 .restaurants .restaurant_h3 {
   padding-left: 5px;

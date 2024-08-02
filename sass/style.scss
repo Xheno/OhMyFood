@@ -71,36 +71,49 @@
   }
   /*****************************************Fonctionnement********************************************/
   .fonctionnement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-left: -8px;
     margin-right: -8px;
     padding: 8px;
-  }
-  .fonctionnement_card {
-    height: 72px;
-    display: flex;
-    background-color: #EAEAEA;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    gap: 20px;
-    border-radius: 20px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
-    margin-bottom: 30px;
-    .border_num {
-      background-color: #9356DC;
-      border-radius: 50px;
+    .fonctionnement_cards {
+      width: 90%;
+      .fonctionnement_card {
+        height: 72px;
+        display: flex;
+        background-color: #EAEAEA;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        gap: 20px;
+        border-radius: 20px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+        margin-bottom: 30px;
+        .border_num {
+          background-color: #9356DC;
+          border-radius: 50px;
+          height: 30px;
+          width: 30px;
+          margin-left: -15px;
+          .num {
+            /*j'arrive pas a remplir le rond autour des numéros*/
+            border-radius: 50px;
+            color: white;
+            padding-left: 10px;
+            margin-top: 6px;
+          }
+        }
+        /*faire le hover sur la carte et changer la couleur des icones*/
+        .fa-solid {
+          height: 19px;
+          color: #7E7E7E;
+        }
+      }
     }
-    .num {
-      /*j'arrive pas a remplir le rond autour des numéros*/
-      border: 1px solid black;
-      border-radius: 50px;
-      color: white;
-      padding: 10px;
-      padding-left: 15px;
-      padding-right: 15px;
-      
-    }
   }
+ 
+  
   
   
   /*****************************************Restaurants***********************************************/
@@ -115,6 +128,7 @@
     background-color: #EAEAEA;
     
     .restaurant {
+      position: relative;
       background-color: white;
       border-radius: 20px;
       height: 251px;
@@ -131,10 +145,43 @@
     }
     .new {
       position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #7E7E7E;
       padding: 10px;
+      border-radius: 10px;
+      p {
+        margin: 0;
+      }
     }
-    .r_card_text {
-      padding: 10px;
+    .card_content {
+      display: flex;
+      .r_card_text {
+        padding: 10px;
+        width: 70%;
+      }
+      .heart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        .toggle_checkbox {
+          height: 0;
+          width: 0;
+        }
+        .heart_empty {
+          display: block;
+        }
+        .heart_full {
+          display: none;
+        }
+        .toggle_checkbox:checked ~ .heart_empty {
+          display: none;
+        }
+        .toggle_checkbox:checked ~ .heart_full {
+          display: block;
+        }
+      }
     }
     .restaurant_h3 {
       padding-left: 5px;
