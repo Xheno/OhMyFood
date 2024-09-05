@@ -15,7 +15,6 @@ header .logoOMF {
   margin-right: auto;
   margin-bottom: 0;
   width: 50%;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
 }
 header .location {
   /*Je trouve pas comment gérer le boxshadow ou le fait de passer la div par dessus*/
@@ -26,6 +25,7 @@ header .location {
   gap: 10px;
   background-color: #EAEAEA;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+  box-shadow: 0px 7px 8px -7px rgba(0, 0, 0, 0.43);
 }
 
 /*****************************************Title*****************************************************/
@@ -138,12 +138,13 @@ img {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #7E7E7E;
+  background-color: #99E2D0;
   padding: 10px;
   border-radius: 10px;
 }
 .restaurants .new p {
   margin: 0;
+  color: #008766;
 }
 .restaurants .card_content {
   display: flex;
@@ -233,4 +234,136 @@ footer .footer_p {
   font-weight: 600;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
+}
+
+/******************************************************************************************************************************Restaurants************************************************/
+.restaurantsMenu .entrees {
+  display: flex;
+  flex-direction: column;
+  margin-left: -8px;
+  margin-right: -8px;
+  padding: 8px;
+}
+.restaurantsMenu .entrees .entrees_cards {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.restaurantsMenu .entrees .entrees_cards .entrees_card {
+  height: 72px;
+  display: flex;
+  background-color: #EAEAEA;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+  margin-bottom: 30px;
+}
+.restaurantsMenu .entrees .entrees_cards .entrees_card .text_Menu {
+  text-align: start;
+  padding: 10px;
+}
+.restaurantsMenu .entrees .entrees_cards .entrees_card .text_Menu .p1 {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.restaurantsMenu .entrees .entrees_cards .entrees_card .text_Menu .p2 {
+  margin: 0;
+  font-size: small;
+}
+
+.restaurantsMenu .plats {
+  display: flex;
+  flex-direction: column;
+  margin-left: -8px;
+  margin-right: -8px;
+  padding: 8px;
+}
+.restaurantsMenu .plats .plats_cards {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.restaurantsMenu .plats .plats_cards .plats_card {
+  height: 72px;
+  display: flex;
+  background-color: #EAEAEA;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+  margin-bottom: 30px;
+}
+.restaurantsMenu .plats .plats_cards .plats_card .text_Menu {
+  text-align: start;
+  padding: 10px;
+}
+.restaurantsMenu .plats .plats_cards .plats_card .text_Menu .p1 {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.restaurantsMenu .plats .plats_cards .plats_card .text_Menu .p2 {
+  margin: 0;
+  font-size: small;
+}
+
+.restaurantsMenu .desserts {
+  display: flex;
+  flex-direction: column;
+  margin-left: -8px;
+  margin-right: -8px;
+  padding: 8px;
+}
+.restaurantsMenu .desserts .desserts_cards {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.restaurantsMenu .desserts .desserts_cards .desserts_card {
+  height: 72px;
+  display: flex;
+  background-color: #EAEAEA;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+  margin-bottom: 30px;
+}
+.restaurantsMenu .desserts .desserts_cards .desserts_card .text_Menu {
+  text-align: start;
+  padding: 10px;
+}
+.restaurantsMenu .desserts .desserts_cards .desserts_card .text_Menu .p1 {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px;
+  font-weight: bolder;
+}
+.restaurantsMenu .desserts .desserts_cards .desserts_card .text_Menu .p2 {
+  margin: 0;
+  font-size: small;
+}
+
+.restaurantsMenu .entrees_title {
+  display: flex;
+  align-items: start;
+}
+
+.order_button {
+  display: block;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 40px;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  padding: 15px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 500;
 }/*# sourceMappingURL=style.css.map */

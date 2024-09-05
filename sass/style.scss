@@ -19,7 +19,6 @@
       margin-right: auto;
       margin-bottom: 0;
       width: 50%;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
     }
     .location {
       /*Je trouve pas comment gérer le boxshadow ou le fait de passer la div par dessus*/
@@ -30,6 +29,7 @@
       gap: 10px;
       background-color: #EAEAEA;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+      box-shadow:  0px 7px 8px -7px rgba(0,0,0,0.43)
     }
   }
   
@@ -147,11 +147,12 @@
       position: absolute;
       top: 10px;
       right: 10px;
-      background-color: #7E7E7E;
+      background-color: #99E2D0;
       padding: 10px;
       border-radius: 10px;
       p {
         margin: 0;
+        color: #008766;
       }
     }
     .card_content {
@@ -244,6 +245,139 @@
       font-size: 16px;
       font-family: "Roboto", sans-serif;
     }
+  }
+
+  /******************************************************************************************************************************Restaurants************************************************/
+
+  .restaurantsMenu .entrees {
+    display: flex;
+    flex-direction: column;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: 8px;
+    .entrees_cards {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      .entrees_card {
+        height: 72px;
+        display: flex;
+        background-color: #EAEAEA;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        border-radius: 20px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+        margin-bottom: 30px;
+        .text_Menu {
+          text-align: start;
+          padding: 10px;
+          .p1 {
+            padding: 0;
+            margin: 0;
+            margin-bottom: 5px;
+          }
+          .p2 {
+            margin: 0;
+            font-size: small;
+          }
+        }
+      }
+    }
+  }
+
+  .restaurantsMenu .plats {
+    display: flex;
+    flex-direction: column;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: 8px;
+    .plats_cards {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      .plats_card {
+        height: 72px;
+        display: flex;
+        background-color: #EAEAEA;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        border-radius: 20px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+        margin-bottom: 30px;
+        .text_Menu {
+          text-align: start;
+          padding: 10px;
+          .p1 {
+            padding: 0;
+            margin: 0;
+            margin-bottom: 5px;
+          }
+          .p2 {
+            margin: 0;
+            font-size: small;
+          }
+        }
+      }
+    }
+  }
+
+  .restaurantsMenu .desserts {
+    display: flex;
+    flex-direction: column;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: 8px;
+    .desserts_cards {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      .desserts_card {
+        height: 72px;
+        display: flex;
+        background-color: #EAEAEA;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        border-radius: 20px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+        margin-bottom: 30px;
+        .text_Menu {
+          text-align: start;
+          padding: 10px;
+          .p1 {
+            padding: 0;
+            margin: 0;
+            margin-bottom: 5px;
+            font-weight: bolder;
+          }
+          .p2 {
+            margin: 0;
+            font-size: small;
+          }
+        }
+      }
+    }
+  }
+
+  .restaurantsMenu .entrees_title {
+    display: flex;
+    align-items: start;
+  }
+
+  .order_button {
+    display: block;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 40px;
+    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    padding: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
   }
 
   
