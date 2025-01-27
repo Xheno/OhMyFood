@@ -1,7 +1,6 @@
 @charset "UTF-8";
 * {
   font-family: "Roboto", sans-serif;
-  /*border: 1px solid red;*/
 }
 
 /*****************************************Header*************************************************/
@@ -28,13 +27,54 @@ header .location {
   box-shadow: 0px 7px 8px -7px rgba(0, 0, 0, 0.43);
 }
 
+body {
+  margin: 0;
+}
+
+.loading {
+  animation: hideLoader 3s forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loading h1 {
+  position: absolute;
+  font-size: 20px;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes hideLoader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+}
 /*****************************************Title*****************************************************/
 h1 {
   text-align: center;
 } 
 .decouvrez {
-  margin-left: -8px;
-  margin-right: -8px;
   padding: 8px;
   text-align: center;
   background-color: #EAEAEA;
@@ -57,53 +97,64 @@ h1 {
   font-size: 16px;
   font-weight: 500;
 }
-
-.button_txt {
+.explore_button .button_txt {
   color: white;
 }
 
 /*****************************************Fonctionnement********************************************/
 .fonctionnement {
+  padding: 20px 20px 50px 30px;
+  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-left: -8px;
-  margin-right: -8px;
-  padding: 8px;
 }
-.fonctionnement .fonctionnement_cards {
-  width: 90%;
+.fonctionnement .fonctionnement-all {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.fonctionnement .fonctionnement_cards .fonctionnement_card {
+.fonctionnement .fonctionnement-container {
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
+  background-color: #F3F3F3;
+  border-radius: 20px;
   height: 72px;
   display: flex;
-  background-color: #EAEAEA;
   flex-direction: row;
-  justify-content: start;
+  padding-left: 50px;
   align-items: center;
-  gap: 20px;
-  border-radius: 20px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
-  margin-bottom: 30px;
-  /*faire le hover sur la carte et changer la couleur des icones*/
 }
-.fonctionnement .fonctionnement_cards .fonctionnement_card .border_num {
-  background-color: #9356DC;
-  border-radius: 50px;
-  height: 30px;
-  width: 30px;
-  margin-left: -15px;
+.fonctionnement .fonctionnement-container .fa-solid {
+  color: #787878;
+  font-size: 25px;
 }
-.fonctionnement .fonctionnement_cards .fonctionnement_card .border_num .num {
-  /*j'arrive pas a remplir le rond autour des numéros*/
-  border-radius: 50px;
+.fonctionnement .fonctionnement-container .fa-store {
+  color: #9356DC;
+}
+.fonctionnement .number-icon {
+  background: #9356DC;
+  height: 25px;
+  width: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   color: white;
-  padding-left: 10px;
-  margin-top: 6px;
+  font-size: 14px;
+  margin-left: -4rem;
+  left: 0;
+  border-radius: 50%;
+  font-style: normal;
 }
-.fonctionnement .fonctionnement_cards .fonctionnement_card .fa-solid {
-  height: 19px;
-  color: #7E7E7E;
+.fonctionnement h3 {
+  font-size: 4vw;
+}
+.fonctionnement .fonctionnement-element {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  margin-left: 2rem;
 }
 
 /*****************************************Restaurants***********************************************/
@@ -112,17 +163,20 @@ img {
 }
 
 .restaurants {
-  margin-left: -8px;
-  margin-right: -8px;
   padding: 8px;
   background-color: #EAEAEA;
+  padding: 20px 20px 50px 20px;
+}
+.restaurants .restaurants_cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .restaurants .restaurant {
   position: relative;
   background-color: white;
   border-radius: 20px;
   height: 251px;
-  margin-bottom: 30px;
 }
 .restaurants .r_img {
   height: 174px;
@@ -159,21 +213,36 @@ img {
   align-items: center;
   width: 30%;
 }
-.restaurants .card_content .heart .toggle_checkbox {
-  height: 0;
+.restaurants .card_content .heart .animation-heart {
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+}
+.restaurants .card_content .heart .animation-heart-empty {
+  width: auto;
+  height: auto;
+  opacity: 1;
+  transition: 0.3s;
+}
+.restaurants .card_content .heart .animation-heart-full {
   width: 0;
+  height: 0;
+  opacity: 0;
+  transition: 0.3s;
+  background: linear-gradient(red, blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.restaurants .card_content .heart .heart_empty {
-  display: block;
+.restaurants .card_content .heart .animation-heart:hover .animation-heart-empty {
+  width: 0;
+  height: 0;
+  opacity: 0;
 }
-.restaurants .card_content .heart .heart_full {
-  display: none;
-}
-.restaurants .card_content .heart .toggle_checkbox:checked ~ .heart_empty {
-  display: none;
-}
-.restaurants .card_content .heart .toggle_checkbox:checked ~ .heart_full {
-  display: block;
+.restaurants .card_content .heart .animation-heart:hover .animation-heart-full {
+  width: auto;
+  height: auto;
+  opacity: 1;
 }
 .restaurants .restaurant_h3 {
   padding-left: 5px;
@@ -212,7 +281,7 @@ footer .logo_txt {
 footer .footer_links {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 7px;
 }
 footer .proposer_restaurant {
   display: flex;
@@ -237,41 +306,85 @@ footer .footer_p {
 }
 
 /******************************************************************************************************************************Restaurants************************************************/
+.IMG_OMF {
+  background-image: url("../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  width: 100%;
+  height: 275px;
+  background-size: contain;
+}
+
+.restaurantsMenu {
+  margin-top: -50px;
+  background-color: #F6F6F6;
+  padding: 13px;
+}
 .restaurantsMenu .entrees {
   display: flex;
   flex-direction: column;
-  margin-left: -8px;
-  margin-right: -8px;
-  padding: 8px;
+  gap: 12px;
 }
 .restaurantsMenu .entrees .entrees_cards {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 .restaurantsMenu .entrees .entrees_cards .entrees_card {
   height: 72px;
   display: flex;
-  background-color: #EAEAEA;
+  background-color: white;
   flex-direction: column;
   justify-content: center;
   align-items: start;
   border-radius: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
-  margin-bottom: 30px;
 }
 .restaurantsMenu .entrees .entrees_cards .entrees_card .text_Menu {
   text-align: start;
   padding: 10px;
+  width: 95%;
 }
 .restaurantsMenu .entrees .entrees_cards .entrees_card .text_Menu .p1 {
-  padding: 0;
+  font-size: 18px;
   margin: 0;
-  margin-bottom: 5px;
+  padding: 5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.restaurantsMenu .entrees .entrees_cards .entrees_card .text_Menu .p2 {
+.restaurantsMenu .entrees .entrees_cards .entrees_card .text_Menu .entrees_price {
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.restaurantsMenu .entrees .entrees_cards .entrees_card .text_Menu .entrees_price .p2 {
   margin: 0;
-  font-size: small;
+}
+.restaurantsMenu .entrees .entrees_cards .entrees_card .text_Menu .entrees_price h5 {
+  margin: 0;
+}
+.restaurantsMenu .entrees .entrees_cards .entrees_card .text_Menu .entrees_price .check {
+  display: none;
+}
+
+.text_Menu:hover h5 {
+  margin-right: 50px;
+}
+
+.text_Menu:Hover .check {
+  background-color: #99E2D0;
+  width: 50px;
+  height: 72px;
+  position: absolute;
+  border-radius: 0px 10px 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
 }
 
 .restaurantsMenu .plats {
@@ -289,7 +402,7 @@ footer .footer_p {
 .restaurantsMenu .plats .plats_cards .plats_card {
   height: 72px;
   display: flex;
-  background-color: #EAEAEA;
+  background-color: white;
   flex-direction: column;
   justify-content: center;
   align-items: start;
@@ -305,6 +418,7 @@ footer .footer_p {
   padding: 0;
   margin: 0;
   margin-bottom: 5px;
+  font-weight: bolder;
 }
 .restaurantsMenu .plats .plats_cards .plats_card .text_Menu .p2 {
   margin: 0;
@@ -325,10 +439,9 @@ footer .footer_p {
 }
 .restaurantsMenu .desserts .desserts_cards .desserts_card {
   height: 72px;
+  width: 100%;
   display: flex;
-  background-color: #EAEAEA;
-  flex-direction: column;
-  justify-content: center;
+  background-color: white;
   align-items: start;
   border-radius: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
@@ -366,4 +479,128 @@ footer .footer_p {
   margin-bottom: 20px;
   font-size: 16px;
   font-weight: 500;
+}
+
+/***************************************************************************************************************Mobile*******************************************/
+@media screen and (min-width: 768px) {
+  .logoOMF {
+    text-align: center;
+  }
+  .logoOMF img {
+    width: 40%;
+  }
+  .decouvrez {
+    background-color: #F6F6F6;
+  }
+  .decouvrez h1 {
+    font-size: 3rem;
+  }
+  .fonctionnement h3 {
+    font-size: 1rem;
+  }
+  .fonctionnement .fonctionnement-container {
+    width: 18vw;
+  }
+  .fonctionnement-all {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 9vw;
+    margin-right: 9vw;
+  }
+  .fonctionnement .number-icon {
+    position: relative;
+    left: 0rem;
+  }
+  .fonctionnement h2,
+  .restaurants h2 {
+    margin-left: 7.5vw;
+  }
+  .restaurants .restaurants_cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+  }
+  .restaurants .restaurants_cards .restaurant {
+    position: relative;
+    width: 40%;
+    background-color: white;
+    border-radius: 20px;
+    height: 251px;
+    margin-bottom: 30px;
+    margin: 0;
+  }
+  /**********************************************************************************************************PageRestaurant**********************************************/
+  .IMG_OMF {
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    position: relative;
+    background-image: url("../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  }
+  .IMG_OMF img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: top;
+       object-position: top;
+  }
+  .restaurantsMenu {
+    position: relative;
+    top: -50px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: -2.85%;
+    background-color: #F6F6F6;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    padding: 6%;
+  }
+  .restaurantsMenu .text_Menu {
+    display: flex;
+    flex-direction: column;
+    width: 97%;
+    position: relative;
+  }
+  .restaurantsMenu .text_Menu .entrees_price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .restaurantsMenu .text_Menu .entrees_price h5 {
+    margin: 0;
+  }
+  .restaurantsMenu .text_Menu .entrees_price .check {
+    display: none;
+  }
+  .desserts_card {
+    display: flex;
+    flex-direction: row;
+    background-color: #008766;
+  }
+  .desserts_card .price {
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  footer .footer_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  footer .footer_links .footer_logo {
+    margin: 0;
+  }
 }/*# sourceMappingURL=style.css.map */

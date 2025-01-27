@@ -26,107 +26,124 @@
         <h1>
             Réservez le menu qui vous convient
         </h1>
+        
         <p class="decouvrez-text">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
         <button class="explore_button" type="button"><span class="button_txt">Explorez nos restaurants</span> </button>
     </section>
-    <section class="fonctionnement">
-        <h2 class="fonctionnement_title">Fonctionnement</h2>
-        <div class="fonctionnement_cards">
-            <div class="fonctionnement_card">
-                <div class="border_num">
-                    <p class="num">1</p>
-                </div>
-                <i class="fa-solid fa-mobile"></i>
-                <p>Choisissez un restaurant</p>
+    <div class="fonctionnement">
+        <h2>Fonctionnement</h2>
+        <div class="fonctionnement-all">
+          <div class="fonctionnement-container">
+            <i class="number-icon">1</i>
+            <div class="fonctionnement-element">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+              <h3>Choisissez un restaurant</h3>
             </div>
-            <div class="fonctionnement_card">
-                <div class="border_num">
-                    <p class="num">2</p>
-                </div>
-                <i class="fa-solid fa-list"></i>
-                <p>Composez votre menu</p>
+          </div>
+          <div class="fonctionnement-container">
+            <i class="number-icon">2</i>
+            <div class="fonctionnement-element">
+              <i class="fa-solid fa-bars"></i>
+              <h3>Composez votre menu</h3>
             </div>
-            <div class="fonctionnement_card">
-                <div class="border_num">
-                    <p class="num">3</p>
-                </div>
-                <i class="fa-solid fa-store"></i>
-                <p>Degustez au restaurant</p>
+          </div>
+          <div class="fonctionnement-container">
+            <i class="number-icon">3</i>
+            <div class="fonctionnement-element">
+              <i class="fa-solid fa-store"></i>
+              <h3>Dégustez au restaurant</h3>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
     <section class="restaurants">
         <h2 class="restaurants_title">Restaurants</h2>
-        <article class="restaurant">
-            <a href="./restaurants/palette.html">
-                <img class="r_img" src="./assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="image d'une table de restaurant">
-            </a>
-            <div class="new">
-                <p>Nouveau</p>
-            </div>
-            <div class="card_content">
+        <div class="restaurants_cards">
+            <article class="restaurant">
+                <a href="./restaurants/palette.html">
+                    <img class="r_img" src="./assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="image d'une table de restaurant">
+                </a>
+                <div class="new">
+                    <p>Nouveau</p>
+                </div>
+                <div class="card_content">
+                    <div class="r_card_text">
+                        <h3 class="restaurant_h3">La palette du goût</h3>
+                        <p class="restaurant_p">Ménilmontant</p>
+                    </div>
+                    <article class="heart">
+                        <div class="animation-heart">
+                            <div class="animation-heart-empty">
+                            <i class="fa-regular fa-heart"></i>
+                            </div>
+                            <div class="animation-heart-full">
+                            <i class="fa-solid fa-heart"></i>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </article>
+            <article class="restaurant">
+                <a href="./restaurants/noteEnchante.html">
+                    <img class="r_img" src="./assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="image d'une table de restaurant">
+                </a>
+                <div class="new">
+                    <p class="new_text">Nouveau</p>
+                </div>
+                <div class="card_content">
+                    <div class="r_card_text">
+                        <h3 class="restaurant_h3">La note enchantée</h3>
+                        <p class="restaurant_p">Charonne</p>
+                    </div>
+                    <article class="heart">
+                        <div class="animation-heart">
+                            <div class="animation-heart-empty">
+                            <i class="fa-regular fa-heart"></i>
+                            </div>
+                            <div class="animation-heart-full">
+                            <i class="fa-solid fa-heart"></i>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </article>
+            <article class="restaurant">
+                <a href="./restaurants/aLaFrancaise.html">
+                <img class="r_img" src="./assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="image d'une table de restaurant">
+                </a>
+                <div class="card_content">
+                    <div class="r_card_text">
+                        <h3 class="restaurant_h3">A la française</h3>
+                        <p class="restaurant_p">Cité Rouge</p>
+                    </div>
+                    <div class="heart">
+                        <input type="checkbox" id="toggle_heart" class="toggle_checkbox">
+                        <label for="toggle_heart" class="heart_empty"><i class="fa-regular fa-heart"></i></label>
+                        <label for="toggle_heart" class="heart_full"><i class="fa-solid fa-heart"></i></label>
+                    </div>
+                </div>
+            </article>
+            <article class="restaurant">
+                <a href="./restaurants/delice.html">
+                    <img class="r_img" src="./assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="image d'une table de restaurant">
+                </a>
+                <div class="card_content">
                 <div class="r_card_text">
-                    <h3 class="restaurant_h3">La palette du goût</h3>
-                    <p class="restaurant_p">Ménilmontant</p>
+                    <h3 class="restaurant_h3">Le délice des sens</h3>
+                    <p class="restaurant_p">Folie-Méricourt</p>
                 </div>
-                <div class="heart">
-                    <input type="checkbox" id="toggle_heart" class="toggle_checkbox">
-                    <label for="toggle_heart" class="heart_empty"><i class="fa-regular fa-heart"></i></label>
-                    <label for="toggle_heart" class="heart_full"><i class="fa-solid fa-heart"></i></label>
-                </div>
-            </div>
-        </article>
-        <article class="restaurant">
-            <a href="./restaurants/noteEnchante.html">
-                <img class="r_img" src="./assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="image d'une table de restaurant">
-            </a>
-            <div class="new">
-                <p class="new_text">Nouveau</p>
-            </div>
-            <div class="card_content">
-                <div class="r_card_text">
-                    <h3 class="restaurant_h3">La note enchantée</h3>
-                    <p class="restaurant_p">Charonne</p>
-                </div>
-                <div class="heart">
-                    <input type="checkbox" id="toggle_heart" class="toggle_checkbox">
-                    <label for="toggle_heart" class="heart_empty"><i class="fa-regular fa-heart"></i></label>
-                    <label for="toggle_heart" class="heart_full"><i class="fa-solid fa-heart"></i></label>
-                </div>
-            </div>
-        </article>
-        <article class="restaurant">
-            <a href="./restaurants/aLaFrancaise.html">
-             <img class="r_img" src="./assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="image d'une table de restaurant">
-            </a>
-            <div class="card_content">
-                <div class="r_card_text">
-                    <h3 class="restaurant_h3">A la française</h3>
-                    <p class="restaurant_p">Cité Rouge</p>
-                </div>
-                <div class="heart">
-                    <input type="checkbox" id="toggle_heart" class="toggle_checkbox">
-                    <label for="toggle_heart" class="heart_empty"><i class="fa-regular fa-heart"></i></label>
-                    <label for="toggle_heart" class="heart_full"><i class="fa-solid fa-heart"></i></label>
-                </div>
-            </div>
-        </article>
-        <article class="restaurant">
-            <a href="./restaurants/delice.html">
-                <img class="r_img" src="./assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="image d'une table de restaurant">
-            </a>
-            <div class="card_content">
-            <div class="r_card_text">
-                <h3 class="restaurant_h3">Le délice des sens</h3>
-                <p class="restaurant_p">Folie-Méricourt</p>
-            </div>
-            <div class="heart">
-                <input type="checkbox" id="toggle_heart" class="toggle_checkbox">
-                <label for="toggle_heart" class="heart_empty"><i class="fa-regular fa-heart"></i></label>
-                <label for="toggle_heart" class="heart_full"><i class="fa-solid fa-heart"></i></label>
-            </div>
-            </div>
-        </article>
+                <article class="heart">
+                    <div class="animation-heart">
+                        <div class="animation-heart-empty">
+                        <i class="fa-regular fa-heart"></i>
+                        </div>
+                        <div class="animation-heart-full">
+                        <i class="fa-solid fa-heart"></i>
+                        </div>
+                    </div>
+                </article>
+            </article>
+        </div>
     </section>
     <footer>
         <div class="footer_logo">
