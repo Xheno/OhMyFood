@@ -22,7 +22,7 @@ header .location {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: #EAEAEA;
+  background-color: #eaeaea;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
   box-shadow: 0px 7px 8px -7px rgba(0, 0, 0, 0.43);
 }
@@ -72,12 +72,13 @@ body {
 }
 /*****************************************Title*****************************************************/
 h1 {
+  margin: 0;
   text-align: center;
 } 
 .decouvrez {
-  padding: 8px;
+  padding: 30px 8px 30px 8px;
   text-align: center;
-  background-color: #EAEAEA;
+  background-color: #eaeaea;
 }
 
 .decouvrez-text {
@@ -90,7 +91,7 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   border-radius: 40px;
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
   padding: 15px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
   margin-bottom: 20px;
@@ -115,7 +116,7 @@ h1 {
 }
 .fonctionnement .fonctionnement-container {
   box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
   border-radius: 20px;
   height: 72px;
   display: flex;
@@ -128,10 +129,10 @@ h1 {
   font-size: 25px;
 }
 .fonctionnement .fonctionnement-container .fa-store {
-  color: #9356DC;
+  color: #9356dc;
 }
 .fonctionnement .number-icon {
-  background: #9356DC;
+  background: #9356dc;
   height: 25px;
   width: 25px;
   display: flex;
@@ -164,7 +165,7 @@ img {
 
 .restaurants {
   padding: 8px;
-  background-color: #EAEAEA;
+  background-color: #f6f6f6;
   padding: 20px 20px 50px 20px;
 }
 .restaurants .restaurants_cards {
@@ -192,7 +193,7 @@ img {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   padding: 10px;
   border-radius: 10px;
 }
@@ -214,8 +215,6 @@ img {
   width: 30%;
 }
 .restaurants .card_content .heart .animation-heart {
-  width: 48px;
-  height: 48px;
   overflow: hidden;
 }
 .restaurants .card_content .heart .animation-heart-empty {
@@ -260,11 +259,8 @@ img {
 
 /******************************************Footer****************************************************/
 footer {
-  margin-left: -8px;
-  margin-right: -8px;
   padding: 8px;
   background-color: #353535;
-  height: 186px;
   color: white;
   padding: 20px;
 }
@@ -305,7 +301,7 @@ footer .footer_p {
   font-family: "Roboto", sans-serif;
 }
 
-/******************************************************************************************************************************Restaurants************************************************/
+/******************************************************************************************************************************RestaurantsPage************************************************/
 .IMG_OMF {
   background-image: url("../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
   width: 100%;
@@ -315,20 +311,44 @@ footer .footer_p {
 
 .restaurantsMenu {
   margin-top: -50px;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   padding: 13px;
+  border-radius: 25px;
 }
-.restaurantsMenu .entrees {
+.restaurantsMenu .title_restaurants {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.restaurantsMenu .title_restaurants h1 {
+  font-size: 28px;
+  font-family: "Shrikhand", sans-serif;
+}
+.restaurantsMenu ._menu {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-.restaurantsMenu .entrees .entrees_cards {
+.restaurantsMenu ._menu ._menu-title {
+  border-bottom: 2px solid #99E2D0;
+  width: 10%;
+}
+.restaurantsMenu ._menu h2 {
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom: 5px;
+}
+.restaurantsMenu ._menu ._menu-cards {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-.restaurantsMenu .entrees .entrees_cards .entrees_card {
+.restaurantsMenu ._menu ._menu-cards ._menu-card {
   height: 72px;
   display: flex;
   background-color: white;
@@ -338,20 +358,24 @@ footer .footer_p {
   border-radius: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
 }
-.restaurantsMenu .entrees .entrees_cards .entrees_card .text_Menu {
+.restaurantsMenu ._menu ._menu-cards ._menu-card .text_Menu {
+  display: flex;
+  flex-direction: column;
   text-align: start;
-  padding: 10px;
-  width: 95%;
+  padding: 10px 15px 10px 10px;
+  width: 93%;
+  gap: 5px;
 }
-.restaurantsMenu .entrees .entrees_cards .entrees_card .text_Menu .p1 {
+.restaurantsMenu ._menu ._menu-cards ._menu-card .text_Menu .p1 {
   font-size: 18px;
+  font-weight: 800;
   margin: 0;
   padding: 5;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.restaurantsMenu .entrees .entrees_cards .entrees_card .text_Menu .entrees_price {
+.restaurantsMenu ._menu ._menu-cards ._menu-card .text_Menu ._menu-price {
   font-size: 14px;
   display: flex;
   flex-direction: row;
@@ -360,39 +384,19 @@ footer .footer_p {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.restaurantsMenu .entrees .entrees_cards .entrees_card .text_Menu .entrees_price .p2 {
+.restaurantsMenu ._menu ._menu-cards ._menu-card .text_Menu ._menu-price .p2 {
   margin: 0;
 }
-.restaurantsMenu .entrees .entrees_cards .entrees_card .text_Menu .entrees_price h5 {
+.restaurantsMenu ._menu ._menu-cards ._menu-card .text_Menu ._menu-price h5 {
   margin: 0;
 }
-.restaurantsMenu .entrees .entrees_cards .entrees_card .text_Menu .entrees_price .check {
+.restaurantsMenu ._menu ._menu-cards ._menu-card .text_Menu ._menu-price .check {
   display: none;
 }
-
-.text_Menu:hover h5 {
-  margin-right: 50px;
-}
-
-.text_Menu:Hover .check {
-  background-color: #99E2D0;
-  width: 50px;
-  height: 72px;
-  position: absolute;
-  border-radius: 0px 10px 10px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  right: 0;
-}
-
 .restaurantsMenu .plats {
   display: flex;
   flex-direction: column;
-  margin-left: -8px;
-  margin-right: -8px;
-  padding: 8px;
+  gap: 12px;
 }
 .restaurantsMenu .plats .plats_cards {
   width: 90%;
@@ -423,6 +427,23 @@ footer .footer_p {
 .restaurantsMenu .plats .plats_cards .plats_card .text_Menu .p2 {
   margin: 0;
   font-size: small;
+}
+
+.text_Menu:hover h5 {
+  margin-right: 50px;
+}
+
+.text_Menu:hover .check {
+  background-color: #99e2d0;
+  width: 50px;
+  height: 72px;
+  position: absolute;
+  border-radius: 0px 10px 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
 }
 
 .restaurantsMenu .desserts {
@@ -473,7 +494,7 @@ footer .footer_p {
   margin-left: auto;
   margin-right: auto;
   border-radius: 40px;
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
   padding: 15px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
   margin-bottom: 20px;
@@ -490,32 +511,36 @@ footer .footer_p {
     width: 40%;
   }
   .decouvrez {
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
   }
   .decouvrez h1 {
     font-size: 3rem;
   }
-  .fonctionnement h3 {
-    font-size: 1rem;
+  /**************************************************************FonctionnementPC*/
+  .fonctionnement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 15%;
+  }
+  .fonctionnement .fonctionnement-all {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
   }
   .fonctionnement .fonctionnement-container {
     width: 18vw;
   }
-  .fonctionnement-all {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left: 9vw;
-    margin-right: 9vw;
-  }
-  .fonctionnement .number-icon {
+  .fonctionnement .fonctionnement .number-icon {
     position: relative;
     left: 0rem;
   }
-  .fonctionnement h2,
-  .restaurants h2 {
-    margin-left: 7.5vw;
+  .fonctionnement h3 {
+    font-size: 1rem;
   }
+  /***************************************************************RestaurantsPC*/
   .restaurants .restaurants_cards {
     width: 100%;
     display: flex;
@@ -533,7 +558,7 @@ footer .footer_p {
     margin-bottom: 30px;
     margin: 0;
   }
-  /**********************************************************************************************************PageRestaurant**********************************************/
+  /**********************************************************************************************************PageRestaurantPC**********************************************/
   .IMG_OMF {
     width: 100%;
     height: 700px;
@@ -552,10 +577,7 @@ footer .footer_p {
   .restaurantsMenu {
     position: relative;
     top: -50px;
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-bottom: -2.85%;
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     padding: 6%;
@@ -584,8 +606,6 @@ footer .footer_p {
   }
   .desserts_card .price {
     text-align: center;
-    margin-top: 10px;
-    margin-right: 10px;
     font-weight: bold;
   }
   footer {
