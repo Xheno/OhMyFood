@@ -130,13 +130,11 @@ body {
   font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
-
   .fonctionnement-all {
     display: flex;
     flex-direction: column;
     gap: 20px;
   } 
-
   .fonctionnement-container {
     box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
     background-color: #f3f3f3;
