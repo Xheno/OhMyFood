@@ -329,6 +329,9 @@ footer .footer_p {
 .navbar .arrow {
   color: black;
 }
+.navbar .logoOMF {
+  box-shadow: none;
+}
 .navbar h1 {
   font-family: "Shrikhand", sans-serif;
 }
@@ -341,21 +344,63 @@ footer .footer_p {
 }
 
 .restaurantsMenu {
+  position: relative;
   margin-top: -50px;
   background-color: #f6f6f6;
   padding: 23px 13px 13px;
   border-radius: 25px;
 }
-.restaurantsMenu .title_restaurants {
+.restaurantsMenu .titleAndHeart {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding: 8px;
+}
+.restaurantsMenu .titleAndHeart .title_restaurants {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 20px;
 }
-.restaurantsMenu .title_restaurants h1 {
+.restaurantsMenu .titleAndHeart .title_restaurants h1 {
   font-size: 28px;
+  font-weight: 400;
   font-family: "Shrikhand", sans-serif;
+  margin: 0;
+}
+.restaurantsMenu .titleAndHeart .heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.restaurantsMenu .titleAndHeart .animation-heart {
+  overflow: hidden;
+}
+.restaurantsMenu .titleAndHeart .animation-heart-empty {
+  width: auto;
+  height: auto;
+  opacity: 1;
+  transition: 0.3s;
+}
+.restaurantsMenu .titleAndHeart .animation-heart-full {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transition: 0.3s;
+  background: linear-gradient(red, blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.restaurantsMenu .titleAndHeart .animation-heart:hover .animation-heart-empty {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+.restaurantsMenu .titleAndHeart .animation-heart:hover .animation-heart-full {
+  width: auto;
+  height: auto;
+  opacity: 1;
 }
 .restaurantsMenu ._menu {
   display: flex;
@@ -366,7 +411,7 @@ footer .footer_p {
   border-bottom: 2px solid #99E2D0;
   width: 10%;
 }
-.restaurantsMenu ._menu h2 {
+.restaurantsMenu ._menu ._menu-title h2 {
   font-size: 16px;
   font-weight: 300;
   text-transform: uppercase;
@@ -387,6 +432,7 @@ footer .footer_p {
   justify-content: center;
   align-items: start;
   border-radius: 20px;
+  position: relative;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
 }
 .restaurantsMenu ._menu ._menu-cards ._menu-card .text_Menu {
@@ -406,7 +452,7 @@ footer .footer_p {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.restaurantsMenu ._menu ._menu-cards ._menu-card .text_Menu ._menu-price {
+.restaurantsMenu ._menu ._menu-cards ._menu-card .text_Menu ._text-menu {
   font-size: 14px;
   display: flex;
   flex-direction: row;
@@ -415,51 +461,26 @@ footer .footer_p {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.restaurantsMenu ._menu ._menu-cards ._menu-card .text_Menu ._menu-price .p2 {
+.restaurantsMenu ._menu ._menu-cards ._menu-card .text_Menu ._text-menu .p2 {
   margin: 0;
   font-size: 15px;
   font-weight: 300;
 }
-.restaurantsMenu ._menu ._menu-cards ._menu-card .text_Menu ._menu-price h5 {
-  margin: 0;
-}
-.restaurantsMenu ._menu ._menu-cards ._menu-card .text_Menu ._menu-price .check {
-  display: none;
-}
-.restaurantsMenu .plats {
+.restaurantsMenu ._menu ._menu-cards ._menu-card .text_Menu ._text-menu .euro {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.restaurantsMenu .plats .plats_cards {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.restaurantsMenu .plats .plats_cards .plats_card {
-  height: 72px;
-  display: flex;
-  background-color: white;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  align-items: start;
-  border-radius: 20px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
-  margin-bottom: 30px;
+  gap: 3px;
 }
-.restaurantsMenu .plats .plats_cards .plats_card .text_Menu {
-  text-align: start;
-  padding: 10px;
-}
-.restaurantsMenu .plats .plats_cards .plats_card .text_Menu .p1 {
-  padding: 0;
+.restaurantsMenu ._menu ._menu-cards ._menu-card .text_Menu ._text-menu h5 {
+  font-size: 15px;
+  font-weight: 700;
   margin: 0;
-  margin-bottom: 5px;
-  font-weight: bolder;
 }
-.restaurantsMenu .plats .plats_cards .plats_card .text_Menu .p2 {
-  margin: 0;
-  font-size: small;
+
+.check {
+  display: none;
 }
 
 .text_Menu:hover h5 {
@@ -479,69 +500,39 @@ footer .footer_p {
   right: 0;
 }
 
-.restaurantsMenu .desserts {
+.orderSection {
   display: flex;
-  flex-direction: column;
-  margin-left: -8px;
-  margin-right: -8px;
-  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 0 20px 0;
 }
-.restaurantsMenu .desserts .desserts_cards {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.restaurantsMenu .desserts .desserts_cards .desserts_card {
-  height: 72px;
-  width: 100%;
-  display: flex;
-  background-color: white;
-  align-items: start;
-  border-radius: 20px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
-  margin-bottom: 30px;
-}
-.restaurantsMenu .desserts .desserts_cards .desserts_card .text_Menu {
-  text-align: start;
-  padding: 10px;
-}
-.restaurantsMenu .desserts .desserts_cards .desserts_card .text_Menu .p1 {
-  padding: 0;
+.orderSection .order_button {
   margin: 0;
-  margin-bottom: 5px;
-  font-weight: bolder;
-}
-.restaurantsMenu .desserts .desserts_cards .desserts_card .text_Menu .p2 {
-  margin: 0;
-  font-size: small;
-}
-
-.restaurantsMenu .entrees_title {
+  width: 50%;
+  justify-content: center;
+  align-items: center;
   display: flex;
-  align-items: start;
-}
-
-.order_button {
-  display: block;
   border: none;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 40px;
-  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+  background: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
   padding: 15px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
-  margin-bottom: 20px;
+}
+.orderSection .button_txt {
+  color: white;
   font-size: 16px;
   font-weight: 500;
 }
 
-/***************************************************************************************************************Mobile*******************************************/
+/***************************************************************************************************************PC*******************************************/
 @media screen and (min-width: 768px) {
+  /*************************alaideboxshadowmarchepas*/
   .logoOMF {
     text-align: center;
+    box-shadow: none;
   }
-  .logoOMF img {
-    width: 40%;
+  .location {
+    box-shadow: none;
   }
   .decouvrez {
     background-color: #f6f6f6;
@@ -553,9 +544,10 @@ footer .footer_p {
   .fonctionnement {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 50px 15%;
+    padding: 20px 15%;
+  }
+  .fonctionnement h2 {
+    padding: 0 20px;
   }
   .fonctionnement .fonctionnement-all {
     display: flex;
@@ -574,13 +566,24 @@ footer .footer_p {
     font-size: 1rem;
   }
   /***************************************************************RestaurantsPC*/
+  .restaurants {
+    display: flex;
+    padding: 0 12%;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .restaurants .restaurants_title {
+    display: flex;
+    padding: 30px 90px;
+    margin: 0;
+  }
   .restaurants .restaurants_cards {
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 20px;
-    justify-content: center;
+    gap: 30px;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
   }
   .restaurants .restaurants_cards .restaurant {
     position: relative;
@@ -588,7 +591,6 @@ footer .footer_p {
     background-color: white;
     border-radius: 20px;
     height: 251px;
-    margin-bottom: 30px;
     margin: 0;
   }
   /**********************************************************************************************************PageRestaurantPC**********************************************/
