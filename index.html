@@ -72,16 +72,15 @@
                         <h3 class="restaurant_h3">La palette du goût</h3>
                         <p class="restaurant_p">Ménilmontant</p>
                     </div>
-                    <article class="heart">
-                        <div class="animation-heart">
-                            <div class="animation-heart-empty">
+                    <div class="heart toggle_checkbox">
+                        <input type="checkbox" id="toggle_heart">
+                        <label for="toggle_heart" class="heart_empty">
                             <i class="fa-regular fa-heart fa-lg"></i>
-                            </div>
-                            <div class="animation-heart-full">
+                        </label>
+                        <label for="toggle_heart" class="heart_full">
                             <i class="fa-solid fa-heart fa-lg"></i>
-                            </div>
-                        </div>
-                    </article>
+                        </label>
+                    </div>
                 </div>
             </article>
             <article class="restaurant">
@@ -151,25 +150,29 @@
         </div>
     </section>
     <footer>
-        <div class="footer_logo">
-            <p class="logo_txt">Ohmyfood</p>
+        <div class="footer-content">
+            <div class="footer_logo">
+                <p class="logo_txt">ohmyfood</p>
+            </div>
+            <article class="footer_links">
+                <div class="proposer_restaurant">
+                    <i class="fa-solid fa-utensils"></i>
+                    <p class="footer_p">Proposer un restaurant</p>
+                </div>
+                <div class="partenaire">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                    <p class="footer_p">Devenir partenaires</p>
+                </div>
+                <div class="mentions">
+                    <p class="footer_p">Mentions légales</p>
+                </div>
+                <div class="contact">
+                    <a class="contact-link" href="mailto:contact@ohmyfood.com">
+                        <p class="footer_p">Contact</p>
+                    </a>
+                </div>
+            </article>
         </div>
-        <article class="footer_links">
-            <div class="proposer_restaurant">
-                <i class="fa-solid fa-utensils"></i>
-                <p class="footer_p">Proposer un restaurant</p>
-            </div>
-            <div class="partenaire">
-                <i class="fa-solid fa-handshake-angle"></i>
-                <p class="footer_p">Devenir partenaires</p>
-            </div>
-            <div class="mentions">
-                <p class="footer_p">Mentions légales</p>
-            </div>
-            <div class="contact">
-                <p class="footer_p">Contact</p>
-            </div>
-        </article>
     </footer>
 </body>
 </html>

@@ -223,6 +223,7 @@ img {
   }
   .card_content {
     display: flex;
+    justify-content: space-between;
     .r_card_text {
       padding: 10px;
       width: 70%;
@@ -231,36 +232,51 @@ img {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 30%;
-      .animation-heart {
-        overflow: hidden;
-      }
-      .animation-heart-empty {
-        width: auto;
-        height: auto;
-        opacity: 1;
-        transition: 0.3s;
-      }
-      .animation-heart-full {
-        width: 0;
-        height: 0;
-        opacity: 0;
-        transition: 0.3s;
-        background: linear-gradient(red, blue);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .animation-heart:hover .animation-heart-empty {
-        width: 0;
-        height: 0;
-        opacity: 0;
-      }
-      .animation-heart:hover .animation-heart-full {
-        width: auto;
-        height: auto;
-        opacity: 1;
-      }
+      padding: 30px;
+    }
+    .toggle_checkbox input[type="checkbox"],
+      .toggle_checkbox .heart_full{
+      display: none;
+    }
+    .toggle_checkbox input[type="checkbox"]:checked ~ .heart_full
+    {
+      display: inline-block;
+    }
+    
+    .fa-heart.fa-solid:before {
+      background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+      background-clip: text;
+      color: transparent;
+    }
+    .toggle_checkbox input[type="checkbox"]:checked ~ .heart_empty
+    {
+      display: none;
+    }
+    .animation-heart-empty {
+      width: auto;
+      height: auto;
+      opacity: 1;
+      transition: 0.3s;
+    }
+    .animation-heart-full {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      transition: 0.3s;
+      background: linear-gradient(red, blue);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .animation-heart:hover .animation-heart-empty {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    .animation-heart:hover .animation-heart-full {
+      width: auto;
+      height: auto;
+      opacity: 1;
     }
   }
 
@@ -315,6 +331,10 @@ footer {
   .fa-solid {
     color: white;
   }
+  .contact-link {
+    color: white;
+    text-decoration: none;
+  }
   .footer_p {
     margin: 0;
     font-weight: 600;
@@ -348,7 +368,7 @@ footer {
   background-image: url("../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
   width: 100%;
   height: 275px;
-  background-size: contain;
+  background-size: cover;
 }
 
 .restaurantsMenu {
@@ -374,40 +394,53 @@ footer {
         margin: 0;
       }
     }
-    .heart {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .animation-heart {
-      overflow: hidden;
-    }
-    .animation-heart-empty {
-      width: auto;
-      height: auto;
-      opacity: 1;
-      transition: 0.3s;
-    }
-    .animation-heart-full {
-      width: 0;
-      height: 0;
-      opacity: 0;
-      transition: 0.3s;
-      background: linear-gradient(red, blue);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .animation-heart:hover .animation-heart-empty {
-      width: 0;
-      height: 0;
-      opacity: 0;
-    }
-    .animation-heart:hover .animation-heart-full {
-      width: auto;
-      height: auto;
-      opacity: 1;
-    }
+  }
+
+  .heart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .toggle_checkbox input[type="checkbox"],
+    .toggle_checkbox .heart_full{
+    display: none;
+  }
+  .toggle_checkbox input[type="checkbox"]:checked ~ .heart_full
+  {
+    display: inline-block;
+  }
+  .toggle_checkbox input[type="checkbox"]:checked ~ .heart_empty
+  {
+    display: none;
+  }
+  .animation-heart {
+    overflow: hidden;
+  }
+  .animation-heart-empty {
+    width: auto;
+    height: auto;
+    opacity: 1;
+    transition: 0.3s;
+  }
+  .animation-heart-full {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: 0.3s;
+    background: linear-gradient(red, blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .animation-heart:hover .animation-heart-empty {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  .animation-heart:hover .animation-heart-full {
+    width: auto;
+    height: auto;
+    opacity: 1;
   }
   
   ._menu {
@@ -579,7 +612,7 @@ footer {
   /***************************************************************RestaurantsPC*/
   .restaurants {
     display: flex;
-    padding: 0 12%;
+    padding: 0 11%;
     flex-direction: column;
     justify-content: center;
     .restaurants_title {
@@ -606,27 +639,29 @@ footer {
   }
   /**********************************************************************************************************PageRestaurantPC**********************************************/
   .IMG_OMF {
-    width: 100%;
-    height: 700px;
-    overflow: hidden;
-    position: relative;
     background-image: url("../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
-    }
+    width: 100%;
+    height: 383px;
+    background-size: cover;
+    background-position-y: center;
   }
 
 
   .restaurantsMenu {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
     top: -50px;
+    position: relative;
     background-color: #f6f6f6;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
-    padding: 6%;
+    max-width: 1055px;
+    .Menu_section {
+      max-width: 634px;
+      width: 100%;
+    }
     .text_Menu {
       display: flex;
       flex-direction: column;
@@ -655,9 +690,18 @@ footer {
     }
   }
   footer {
+    height: 114px;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: end;
+    align-items: end;
+    .footer-content {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    .logo_txt {
+      padding: 0 20px;
+      text-align: end;
+    }
     .footer_links {
       display: flex;
       flex-direction: row;
@@ -666,6 +710,9 @@ footer {
       gap: 15px;
       .footer_logo {
         margin: 0;
+      }
+      .mentions {
+        padding-left: 30px;
       }
     }
   }

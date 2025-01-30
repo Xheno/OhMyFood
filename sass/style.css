@@ -218,6 +218,7 @@ img {
 }
 .restaurants .card_content {
   display: flex;
+  justify-content: space-between;
 }
 .restaurants .card_content .r_card_text {
   padding: 10px;
@@ -227,18 +228,31 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
+  padding: 30px;
 }
-.restaurants .card_content .heart .animation-heart {
-  overflow: hidden;
+.restaurants .card_content .toggle_checkbox input[type=checkbox],
+.restaurants .card_content .toggle_checkbox .heart_full {
+  display: none;
 }
-.restaurants .card_content .heart .animation-heart-empty {
+.restaurants .card_content .toggle_checkbox input[type=checkbox]:checked ~ .heart_full {
+  display: inline-block;
+}
+.restaurants .card_content .fa-heart.fa-solid:before {
+  background: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+.restaurants .card_content .toggle_checkbox input[type=checkbox]:checked ~ .heart_empty {
+  display: none;
+}
+.restaurants .card_content .animation-heart-empty {
   width: auto;
   height: auto;
   opacity: 1;
   transition: 0.3s;
 }
-.restaurants .card_content .heart .animation-heart-full {
+.restaurants .card_content .animation-heart-full {
   width: 0;
   height: 0;
   opacity: 0;
@@ -248,12 +262,12 @@ img {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.restaurants .card_content .heart .animation-heart:hover .animation-heart-empty {
+.restaurants .card_content .animation-heart:hover .animation-heart-empty {
   width: 0;
   height: 0;
   opacity: 0;
 }
-.restaurants .card_content .heart .animation-heart:hover .animation-heart-full {
+.restaurants .card_content .animation-heart:hover .animation-heart-full {
   width: auto;
   height: auto;
   opacity: 1;
@@ -309,6 +323,10 @@ footer .partenaire {
 footer .fa-solid {
   color: white;
 }
+footer .contact-link {
+  color: white;
+  text-decoration: none;
+}
 footer .footer_p {
   margin: 0;
   font-weight: 600;
@@ -340,7 +358,7 @@ footer .footer_p {
   background-image: url("../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
   width: 100%;
   height: 275px;
-  background-size: contain;
+  background-size: cover;
 }
 
 .restaurantsMenu {
@@ -368,21 +386,31 @@ footer .footer_p {
   font-family: "Shrikhand", sans-serif;
   margin: 0;
 }
-.restaurantsMenu .titleAndHeart .heart {
+.restaurantsMenu .heart {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.restaurantsMenu .titleAndHeart .animation-heart {
+.restaurantsMenu .toggle_checkbox input[type=checkbox],
+.restaurantsMenu .toggle_checkbox .heart_full {
+  display: none;
+}
+.restaurantsMenu .toggle_checkbox input[type=checkbox]:checked ~ .heart_full {
+  display: inline-block;
+}
+.restaurantsMenu .toggle_checkbox input[type=checkbox]:checked ~ .heart_empty {
+  display: none;
+}
+.restaurantsMenu .animation-heart {
   overflow: hidden;
 }
-.restaurantsMenu .titleAndHeart .animation-heart-empty {
+.restaurantsMenu .animation-heart-empty {
   width: auto;
   height: auto;
   opacity: 1;
   transition: 0.3s;
 }
-.restaurantsMenu .titleAndHeart .animation-heart-full {
+.restaurantsMenu .animation-heart-full {
   width: 0;
   height: 0;
   opacity: 0;
@@ -392,12 +420,12 @@ footer .footer_p {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.restaurantsMenu .titleAndHeart .animation-heart:hover .animation-heart-empty {
+.restaurantsMenu .animation-heart:hover .animation-heart-empty {
   width: 0;
   height: 0;
   opacity: 0;
 }
-.restaurantsMenu .titleAndHeart .animation-heart:hover .animation-heart-full {
+.restaurantsMenu .animation-heart:hover .animation-heart-full {
   width: auto;
   height: auto;
   opacity: 1;
@@ -568,7 +596,7 @@ footer .footer_p {
   /***************************************************************RestaurantsPC*/
   .restaurants {
     display: flex;
-    padding: 0 12%;
+    padding: 0 11%;
     flex-direction: column;
     justify-content: center;
   }
@@ -595,27 +623,27 @@ footer .footer_p {
   }
   /**********************************************************************************************************PageRestaurantPC**********************************************/
   .IMG_OMF {
-    width: 100%;
-    height: 700px;
-    overflow: hidden;
-    position: relative;
     background-image: url("../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
-  }
-  .IMG_OMF img {
     width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: top;
-       object-position: top;
+    height: 383px;
+    background-size: cover;
+    background-position-y: center;
   }
   .restaurantsMenu {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
     top: -50px;
+    position: relative;
     background-color: #f6f6f6;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
-    padding: 6%;
+    max-width: 1055px;
+  }
+  .restaurantsMenu .Menu_section {
+    max-width: 634px;
+    width: 100%;
   }
   .restaurantsMenu .text_Menu {
     display: flex;
@@ -644,9 +672,18 @@ footer .footer_p {
     font-weight: bold;
   }
   footer {
+    height: 114px;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: end;
+    align-items: end;
+  }
+  footer .footer-content {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  footer .logo_txt {
+    padding: 0 20px;
+    text-align: end;
   }
   footer .footer_links {
     display: flex;
@@ -657,5 +694,8 @@ footer .footer_p {
   }
   footer .footer_links .footer_logo {
     margin: 0;
+  }
+  footer .footer_links .mentions {
+    padding-left: 30px;
   }
 }/*# sourceMappingURL=style.css.map */
