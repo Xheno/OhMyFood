@@ -37,7 +37,7 @@ body {
 }
 
 .loading { /*********************LOADER***********************************/
-  animation: hideLoader 0.5s forwards;
+  animation: hideLoader 1.5s forwards;
   display: flex;
   flex-direction: column;
   justify-content: center;
