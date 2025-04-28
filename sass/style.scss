@@ -255,14 +255,14 @@ img {
     .heart_empty {
       position :absolute;
       stroke-width: 1px;
-      right: 15;
+      right: 15px;
     }
 
     .heart_full
     {
       display: inline-block;
       position: absolute;
-      right: 15;
+      right: 15px;
       scale: 0;
       transition: scale 0.15s linear;
       transform-origin: bottom;
@@ -528,7 +528,7 @@ footer {
             font-size: 18px;
             font-weight: 500;
             margin: 0;
-            padding: 5;
+            padding: 5px;
             min-width: 0;
             white-space: nowrap;
             overflow: hidden;
