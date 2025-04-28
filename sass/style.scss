@@ -40,20 +40,23 @@ body {
   margin: 0;
 }
 
-.loading {
-  animation: hideLoader 3s forwards;
+.loading {                             /*********************LOADER***********************************/
+  animation: hideLoader 0.5s forwards;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  h1 {
-    position: absolute;
-    font-size: 20px;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgb(55, 52, 52);
+  z-index: 9999;
 }
 
 .loader {
-  border: 16px solid #f3f3f3;
+  border: 16px solid #fefdfd;
   border-top: 16px solid #3498db;
   width: 120px;
   height: 120px;
@@ -120,6 +123,9 @@ body {
         padding: 10px;
         color: white;
       }
+    }
+    ._explore_button:hover {
+      transform: scale(1.05);  
     }
   }
 }
@@ -201,8 +207,8 @@ img {
     height: 251px;
   }
   .r_img {
-    height: 174px;
     object-fit: cover;
+    object-position: 50% 58%;
     display: block;
     width: 100%;
     height: 70%;
@@ -233,50 +239,45 @@ img {
       justify-content: center;
       align-items: center;
       padding: 30px;
+      position: absolute;
+      right: 15px;
+      cursor: pointer;
+      i {
+        font-size: 25px;
+        -webkit-text-stroke: 1px white; /* Ajoute une bordure blanche pour diminuer l'épaisseur du border de l'icône */
+      }
     }
-    .toggle_checkbox input[type="checkbox"],
-      .toggle_checkbox .heart_full{
+
+    .toggle_checkbox input[type="checkbox"] {
       display: none;
     }
-    .toggle_checkbox input[type="checkbox"]:checked ~ .heart_full
+
+    .heart_empty {
+      position :absolute;
+      stroke-width: 1px;
+      right: 15;
+    }
+
+    .heart_full
     {
       display: inline-block;
+      position: absolute;
+      right: 15;
+      scale: 0;
+      transition: scale 0.15s linear;
+      transform-origin: bottom;
+    }
+    
+    .toggle_checkbox input[type="checkbox"]:checked ~ .heart_full
+    {
+      scale: 1;
+      transition: scale 0.3s cubic-bezier(.36,1.59,0,1.28);
     }
     
     .fa-heart.fa-solid:before {
       background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
       background-clip: text;
       color: transparent;
-    }
-    .toggle_checkbox input[type="checkbox"]:checked ~ .heart_empty
-    {
-      display: none;
-    }
-    .animation-heart-empty {
-      width: auto;
-      height: auto;
-      opacity: 1;
-      transition: 0.3s;
-    }
-    .animation-heart-full {
-      width: 0;
-      height: 0;
-      opacity: 0;
-      transition: 0.3s;
-      background: linear-gradient(red, blue);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .animation-heart:hover .animation-heart-empty {
-      width: 0;
-      height: 0;
-      opacity: 0;
-    }
-    .animation-heart:hover .animation-heart-full {
-      width: auto;
-      height: auto;
-      opacity: 1;
     }
   }
 
@@ -370,24 +371,43 @@ footer {
   height: 275px;
   background-size: cover;
 }
+.palette {
+  background-image: url("../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+}
+.note {
+  background-image: url("../assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+}
+.française {
+  background-image: url("../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+}
+.delice {
+  background-image: url("../assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+}
 
 .restaurantsMenu {
   position: relative;
   margin-top: -50px;
   background-color: #f6f6f6;
   padding: 23px 13px 13px;
-  border-radius: 25px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+
   .titleAndHeart {
     display: flex;
     flex-direction: row;
-    gap: 40px;
     padding: 8px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 30px;
+
     .title_restaurants {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      h1 {
+      h2 {
         font-size: 28px;
         font-weight: 400;
         font-family: "Shrikhand", sans-serif;
@@ -399,54 +419,75 @@ footer {
   .heart {
     display: flex;
     justify-content: center;
-    align-items: center;
+    right: 45px;
+    top: 40px;
+    i {
+      font-size: 25px;
+      -webkit-text-stroke: 1px white; /* Ajoute une bordure blanche pour diminuer l'épaisseur du border de l'icône */
+    }
   }
-  .toggle_checkbox input[type="checkbox"],
-    .toggle_checkbox .heart_full{
+
+  .toggle_checkbox input[type="checkbox"] {
     display: none;
   }
-  .toggle_checkbox input[type="checkbox"]:checked ~ .heart_full
+
+  .heart_empty {
+    position :absolute;
+    stroke-width: 1px;
+    top: 27%;
+  }
+
+  .heart_full
   {
     display: inline-block;
+    position: absolute;
+    top: 27%;
+    scale: 0;
+    transition: scale 0.15s linear;
+    transform-origin: bottom;
   }
-  .toggle_checkbox input[type="checkbox"]:checked ~ .heart_empty
+  
+  .toggle_checkbox input[type="checkbox"]:checked ~ .heart_full
   {
-    display: none;
+    scale: 1;
+    transition: scale 0.3s cubic-bezier(.36,1.59,0,1.28);
   }
-  .animation-heart {
-    overflow: hidden;
-  }
-  .animation-heart-empty {
-    width: auto;
-    height: auto;
-    opacity: 1;
-    transition: 0.3s;
-  }
-  .animation-heart-full {
-    width: 0;
-    height: 0;
-    opacity: 0;
-    transition: 0.3s;
-    background: linear-gradient(red, blue);
-    -webkit-background-clip: text;
+  
+  .fa-heart.fa-solid:before {
+    background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
-  .animation-heart:hover .animation-heart-empty {
-    width: 0;
-    height: 0;
-    opacity: 0;
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
-  .animation-heart:hover .animation-heart-full {
-    width: auto;
-    height: auto;
-    opacity: 1;
+
+  .entree {
+    animation: slideIn 0.5s ease-in-out forwards 0.2s;
+  }
+
+  .plat {
+    animation: slideIn 0.5s ease-in-out forwards 0.4s;
+  }
+
+  .dessert {
+    animation: slideIn 0.5s ease-in-out forwards 0.6s;
   }
   
   ._menu {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    transform: translateY(50px);
+    opacity: 0;
     ._menu-title {
       border-bottom: 2px solid #99E2D0;
       width: 10%;
@@ -459,7 +500,6 @@ footer {
         padding-bottom: 5px;
       }
     }
-    
     ._menu-cards {
       display: flex;
       flex-direction: column;
@@ -468,78 +508,90 @@ footer {
         height: 72px;
         display: flex;
         background-color: white;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: start;
         border-radius: 20px;
         position: relative;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+        width: 100%;
         .text_Menu {
           display: flex;
+          box-sizing: border-box;
           flex-direction: column;
           text-align: start;
           padding: 10px 15px 10px 10px;
-          width: 93%;
+          transition: width 0.5s ease-in-out;
           gap: 5px;
+          width: 90%;
           .p1 {
             font-size: 18px;
             font-weight: 500;
             margin: 0;
             padding: 5;
+            min-width: 0;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
           }
-          ._text-menu {
-            font-size: 14px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+          .p2 {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 300;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            .p2 {
-              margin: 0;
-              font-size: 15px;
-              font-weight: 300;
-            }
-            .euro {
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              justify-content: center;
-              gap: 3px;
-            }
-            h5 {
-              font-size: 15px;
-              font-weight: 700;
-              margin: 0;
-            }
           }
+        }
+        .euro {
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          width: 10%;
+        }
+        span {
+          align-self: flex-end;
+          margin: 0 !important;
+          font-size: 15px;
+          font-weight: 700;
+          padding-right: 10px;
+          padding-bottom: 15px;
         }
       }
     }
   }
 }
 .check {
-  display: none;
-}
-.text_Menu:hover h5 {
-  margin-right: 50px;
-}
-
-.text_Menu:hover .check {
-  background-color: #99e2d0;
-  width: 50px;
+  width: 0;
   height: 72px;
-  position: absolute;
-  border-radius: 0px 10px 10px 0;
+  box-sizing: border-box;
+  background-color: #99e2d0;
+  border-radius: 0px 20px 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 0;
-  right: 0;
+  opacity: 0;
+  transition: 0.5s ease-in-out, opacity 0.3s ease-in-out;
+  transform-origin: right;
+ i {
+    color: white;
+    font-size: 16px;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 5px;
+  }
 }
+
+._menu-card:hover {
+  .check {
+    width: 10%;  /* La barre verte s'étend progressivement */
+    opacity: 1;
+  }
+  .text_Menu {
+    width: 80% !important;
+  }
+}
+
 
 .orderSection {
   display: flex;
@@ -557,19 +609,21 @@ footer {
     background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
     padding: 15px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
-    
   }
   .button_txt {
     color: white;
     font-size: 16px;
     font-weight: 500;
   }
+
+  .order_button:hover {
+    transform: scale(1.05);
+  }
 }
 /***************************************************************************************************************PC*******************************************/
 @media screen and (min-width: 768px) {
   
   
-  /*************************alaideboxshadowmarchepas*/
   .logoOMF {
     text-align: center;
     box-shadow: none;
@@ -629,7 +683,7 @@ footer {
       margin-bottom: 30px;
       .restaurant {
         position: relative;
-        width: 40%;
+        width: 490px;
         background-color: white;
         border-radius: 20px;
         height: 251px;
@@ -639,11 +693,22 @@ footer {
   }
   /**********************************************************************************************************PageRestaurantPC**********************************************/
   .IMG_OMF {
-    background-image: url("../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
     width: 100%;
     height: 383px;
     background-size: cover;
     background-position-y: center;
+  }
+  .palette {
+    background-image: url("../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  }
+  .note {
+    background-image: url("../assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+  }
+  .française {
+    background-image: url("../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  }
+  .delice {
+    background-image: url("../assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
   }
 
 
@@ -652,7 +717,7 @@ footer {
     flex-direction: column;
     align-items: center;
     margin: auto;
-    top: -50px;
+    margin-top: -30px;
     position: relative;
     background-color: #f6f6f6;
     border-top-left-radius: 40px;
@@ -680,13 +745,29 @@ footer {
       }
     }
   }
-  .desserts_card {
+  .orderSection {
     display: flex;
-    flex-direction: row;
-    background-color: #008766;
-    .price {
-      text-align: center;
-      font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 0 20px 0;
+    width: 100%;
+    .order_button {
+      margin: 0;
+      width: 30%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      border: none;
+      border-radius: 40px;
+      background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+      padding: 15px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+      
+    }
+    .button_txt {
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
     }
   }
   footer {

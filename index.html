@@ -22,10 +22,13 @@
            <p>Paris, Belleville</p>
         </div>
     </header>
+    <div class="loading">
+        <div class="loader"></div>
+    </div>
     <section class="decouvrez">
-        <h1>
+        <h2>
             Réservez le menu qui vous convient
-        </h1>
+        </h2>
         <p class="decouvrez-text">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
         <div class="explore_button">
             <button class="_explore_button" type="button"><span class="button_txt">Explorer nos restaurants</span> </button>
@@ -73,11 +76,11 @@
                         <p class="restaurant_p">Ménilmontant</p>
                     </div>
                     <div class="heart toggle_checkbox">
-                        <input type="checkbox" id="toggle_heart">
-                        <label for="toggle_heart" class="heart_empty">
+                        <input type="checkbox" id="toggle_heart_1">
+                        <label for="toggle_heart_1" class="heart_empty">
                             <i class="fa-regular fa-heart fa-lg"></i>
                         </label>
-                        <label for="toggle_heart" class="heart_full">
+                        <label for="toggle_heart_1" class="heart_full">
                             <i class="fa-solid fa-heart fa-lg"></i>
                         </label>
                     </div>
@@ -95,16 +98,15 @@
                         <h3 class="restaurant_h3">La note enchantée</h3>
                         <p class="restaurant_p">Charonne</p>
                     </div>
-                    <article class="heart">
-                        <div class="animation-heart">
-                            <div class="animation-heart-empty">
+                    <div class="heart toggle_checkbox">
+                        <input type="checkbox" id="toggle_heart_2">
+                        <label for="toggle_heart_2" class="heart_empty">
                             <i class="fa-regular fa-heart fa-lg"></i>
-                            </div>
-                            <div class="animation-heart-full">
+                        </label>
+                        <label for="toggle_heart_2" class="heart_full">
                             <i class="fa-solid fa-heart fa-lg"></i>
-                            </div>
-                        </div>
-                    </article>
+                        </label>
+                    </div>
                 </div>
             </article>
             <article class="restaurant">
@@ -113,19 +115,18 @@
                 </a>
                 <div class="card_content">
                     <div class="r_card_text">
-                        <h3 class="restaurant_h3">A la française</h3>
+                        <h3 class="restaurant_h3">À la française</h3>
                         <p class="restaurant_p">Cité Rouge</p>
                     </div>
-                    <article class="heart">
-                        <div class="animation-heart">
-                            <div class="animation-heart-empty">
+                    <div class="heart toggle_checkbox">
+                        <input type="checkbox" id="toggle_heart_3">
+                        <label for="toggle_heart_3" class="heart_empty">
                             <i class="fa-regular fa-heart fa-lg"></i>
-                            </div>
-                            <div class="animation-heart-full">
+                        </label>
+                        <label for="toggle_heart_3" class="heart_full">
                             <i class="fa-solid fa-heart fa-lg"></i>
-                            </div>
-                        </div>
-                    </article>
+                        </label>
+                    </div>
                 </div>
             </article>
             <article class="restaurant">
@@ -133,20 +134,21 @@
                     <img class="r_img" src="./assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="image d'une table de restaurant">
                 </a>
                 <div class="card_content">
-                <div class="r_card_text">
-                    <h3 class="restaurant_h3">Le délice des sens</h3>
-                    <p class="restaurant_p">Folie-Méricourt</p>
-                </div>
-                <article class="heart">
-                    <div class="animation-heart">
-                        <div class="animation-heart-empty">
-                        <i class="fa-regular fa-heart fa-lg"></i>
-                        </div>
-                        <div class="animation-heart-full">
-                        <i class="fa-solid fa-heart fa-lg"></i>
-                        </div>
+                    <div class="r_card_text">
+                        <h3 class="restaurant_h3">Le délice des sens</h3>
+                        <p class="restaurant_p">Folie-Méricourt</p>
                     </div>
-                </article>
+                    <div class="heart toggle_checkbox">
+                        <input type="checkbox" id="toggle_heart_4">
+                        <label for="toggle_heart_4" class="heart_empty">
+                            <i class="fa-regular fa-heart fa-lg"></i>
+                        </label>
+                        <label for="toggle_heart_4" class="heart_full">
+                            <i class="fa-solid fa-heart fa-lg"></i>
+                        </label>
+                    </div>
+                </div>      
+            </article>
         </div>
     </section>
     <footer>
@@ -154,7 +156,7 @@
             <div class="footer_logo">
                 <p class="logo_txt">ohmyfood</p>
             </div>
-            <article class="footer_links">
+            <div class="footer_links">
                 <div class="proposer_restaurant">
                     <i class="fa-solid fa-utensils"></i>
                     <p class="footer_p">Proposer un restaurant</p>
@@ -171,7 +173,7 @@
                         <p class="footer_p">Contact</p>
                     </a>
                 </div>
-            </article>
+            </div>
         </div>
     </footer>
 </body>
